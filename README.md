@@ -21,4 +21,5 @@ $ docker run \
   florian9931/ansible-ssh:latest
 ```
 
-The authorized_keys needs to be chown 1500:1500.
+The authorized_keys needs to be chown 1500:1500. The File and the .ssh directory also needs to be chown 1500 and the chmod needs to be 700 on both, file and directory.
+

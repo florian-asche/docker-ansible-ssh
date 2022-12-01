@@ -13,6 +13,7 @@ RUN apt-get -y update && \
     apt-get -y upgrade && \
     apt-get -y -qq --no-install-recommends install \
         apt-transport-https \
+        locales \
         python3-pip \
         sudo \
         wget \
@@ -23,7 +24,6 @@ RUN apt-get -y update && \
         openssh-server
 
 # Configure locales
-#RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y locales
 #RUN sed -i -e 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen
 #    && dpkg-reconfigure --frontend=noninteractive locales \
 #    && update-locale LANG=de_DE.UTF-8
