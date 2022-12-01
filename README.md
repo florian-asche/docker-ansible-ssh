@@ -23,3 +23,4 @@ $ docker run \
 
 The authorized_keys needs to be chown 1500:1500. The File and the .ssh directory also needs to be chown 1500 and the chmod needs to be 700 on both, file and directory.
 
+In order to use it with Rundeck, you have to use the command function, not the ansible integrated. If you want that, use my other Docker Container that includes Ansible.
