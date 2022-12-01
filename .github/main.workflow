@@ -18,7 +18,7 @@ action "Docker Build" {
 action "Docker Registry" {
   uses = "actions/docker/login@fe7ed3ce992160973df86480b83a2f8ed581cd50"
   env = {
-    DOCKER_REGISTRY_URL = "docker.pkg.github.com"
+    DOCKER_REGISTRY_URL = "registry.hub.docker.com"
   }
   secrets = ["DOCKER_PASSWORD", "DOCKER_USERNAME"]
   needs = ["Docker Build"]
