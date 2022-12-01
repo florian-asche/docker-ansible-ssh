@@ -55,7 +55,7 @@ RUN apt-get -qq clean
 RUN ansible --version
 
 # Install additional needed python packages
-pip install --no-cache-dir  --upgrade PyYAML Jinja2 httplib2 boto requests urllib3
+RUN pip install --no-cache-dir  --upgrade PyYAML Jinja2 httplib2 boto requests urllib3
 
 # Configure SSHD
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
