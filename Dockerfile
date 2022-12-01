@@ -19,6 +19,9 @@ RUN apt-get -y update && \
         wget \
         curl \
         git \
+        net-tools \
+        iputils-ping \
+        dnsutils \
         nmap \
         sshpass \
         openssh-server
