@@ -1,4 +1,4 @@
-FROM ubuntu:22.10
+FROM ubuntu:22.04
 LABEL name="ansible-ssh-agent"
 
 # Run everything as root user
