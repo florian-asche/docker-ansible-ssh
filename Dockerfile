@@ -34,8 +34,8 @@ RUN apt-get -y update && \
 #RUN ex +"%s/^%sudo.*$/%sudo ALL=(ALL:ALL) NOPASSWD:ALL/g" -scwq! /etc/sudoers
 
 # Setup the default user.
-RUN groupadd ansible
-RUN useradd -rm -d /home/ansible -s /bin/bash -g ansible ansible
+RUN groupadd --gid 1500 ansible
+RUN useradd -rm -d /home/ansible -s /bin/bash -u 1500 -g ansible ansible
 RUN echo 'ansible:ansible' | chpasswd
 
 ## Setup ssh directory

@@ -20,3 +20,5 @@ $ docker run \
   -p 2022:22 \
   florian9931/ansible-ssh:latest
 ```
+
+The authorized_keys needs to be chown 1500:1500.
