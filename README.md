@@ -16,7 +16,7 @@ You can run it using the following example and pass configuration environment va
 
 ```bash
 $ docker run \
-  -v $(pwd)/.ssh/authorized_keys:./path/to/your/authorized_keys \
-  -p 22:2022 \
-  florian9931/docker-ansible-ssh:latest
+  -v ./path/to/your/authorized_keys:/home/ansible/.ssh/authorized_keys \
+  -p 2022:22 \
+  florian9931/ansible-ssh:latest
 ```

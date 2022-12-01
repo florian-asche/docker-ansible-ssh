@@ -1,5 +1,6 @@
 FROM ubuntu:22.04
 LABEL name="ansible-ssh-agent"
+MAINTAINER Florian Asche "https://github.com/florian-asche"
 
 # Run everything as root user
 USER root
@@ -56,6 +57,7 @@ RUN ansible --version
 
 # Configure SSHD
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+RUN mkdir /var/run/sshd
 #RUN test -f /etc/ssh/ssh_host_ecdsa_key || /usr/bin/ssh-keygen -q -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key -C '' -N ''
 #RUN test -f /etc/ssh/ssh_host_rsa_key || /usr/bin/ssh-keygen -q -t rsa -f /etc/ssh/ssh_host_rsa_key -C '' -N ''
 #RUN test -f /etc/ssh/ssh_host_ed25519_key || /usr/bin/ssh-keygen -q -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -C '' -N ''
