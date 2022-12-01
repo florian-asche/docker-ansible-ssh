@@ -20,8 +20,7 @@ RUN apt-get -y update && \
         git \
         nmap \
         sshpass \
-        openssh-server \
-    && apt-get -qq clean
+        openssh-server
 
 # Configure locales
 #RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y locales
@@ -52,6 +51,8 @@ RUN apt remove ansible \
     && apt-add-repository ppa:ansible/ansible \
     && apt-get -y update \
     && apt-get -y install ansible
+
+RUN apt-get -qq clean
 
 RUN ansible --version
 
