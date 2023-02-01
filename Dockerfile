@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:23.04
 LABEL name="ansible-ssh-agent"
 MAINTAINER Florian Asche "https://github.com/florian-asche"
 
